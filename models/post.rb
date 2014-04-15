@@ -15,12 +15,10 @@ class Post < ActiveRecord::Base
   def to_param
     slug
   end
-  def make_month(t)
-    self.for_month
-
-  end
   def slug
     title.gsub(" ","-")
+  end
+  def archive_grouping
   end
   private
     def make_slug
