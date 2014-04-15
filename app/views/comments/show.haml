@@ -1,0 +1,14 @@
+.row
+  .col-md-8.col-xs-6
+    %ul.comment-container
+      %li.comment-image
+        =gravatar_for(@comment.post.account)
+      %li.comment-spacing.comment-name  
+        =@comment.post.account.user_name
+      %li.comment-spacing  
+      %li.comment-comment.comment-spacing 
+        =@comment.comment
+      %li.comment-date  
+        .date
+          %kbd
+            ="Has been a member for #{time_ago_in_words(@comment.post.account.created_at)}"

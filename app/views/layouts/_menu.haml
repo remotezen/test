@@ -1,0 +1,38 @@
+%nav.navbar-wrapper.navbar-fixed-top.navbar-custom{role: "navigation"}
+  .jumbotron.logo
+    =image_tag('bike.png')
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", 
+        "data-toggle" => "collapse", type: "button"}
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.main-menu
+        %li.active
+          %a{href: "/"}
+            %span.glyphicon.glyphicon-home.tope
+            Home
+        %li
+          %a{href: "#{ url_for(:recipes, :index)}"}
+            %span.glyphicon.glyphicon-cutlery.tope
+            Recipes
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            %span.glyphicon.glyphicon-book.tope
+            About Us
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{href: "#"} Company Details
+            %li
+              %a{href: "#"} Contact Us
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            %span.glyphicon.glyphicon-user.tope
+            User 
+            %b.caret
+          %ul.dropdown-menu
+            =partial 'layouts/menu_logic' 
+        .navbar-form.navbar-right{action:"/search/create"}
+          =partial 'layouts/search'
+        
+

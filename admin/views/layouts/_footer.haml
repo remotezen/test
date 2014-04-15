@@ -1,0 +1,10 @@
+%footer
+  .footer-wrapper.container
+    %p.pull-left
+      Copyright &copy;
+      =Time.now.year
+      Jo Goes Green - Powered by a lick and a promise v.#{Padrino.version}
+    %ul.pull-right.footer-links
+      %li= link_to tag_icon(:home, 'Jo Goes Green'), "http://localhost", :target => :_blank, :class => 'footer-links-link'
+
+=javascript_include_tag 'jquery-1.9.0.min','js/tinymce/tinymce',  (Padrino.env == :production ? 'bootstrap/bootstrap.min' : %w[bootstrap/affix bootstrap/alert bootstrap/button bootstrap/carousel bootstrap/collapse bootstrap/dropdown  bootstrap/tooltip bootstrap/transition  bootstrap/modal bootstrap/popover bootstrap/scrollspy bootstrap/tab jquery.colorbox]), :application

@@ -1,0 +1,6 @@
+%li.search-item
+-if search.class.name == 'Post'
+  =link_to search.title,url_for("blog/show/#{search.slug}") 
+  =truncate_words("#{search.body}",:length=>8)
+-else 
+  search.inspect

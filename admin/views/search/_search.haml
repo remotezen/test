@@ -1,0 +1,6 @@
+%li.search-item
+  =link_to search.title,url_for("posts/show/#{search.slug}") 
+  =truncate_words("#{ search.body}",:length=>8)
+  ="   posted  #{time_ago_in_words(search.created_at)} ago"
+
+  

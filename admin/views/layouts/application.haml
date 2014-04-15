@@ -1,0 +1,12 @@
+!!! 5
+%html{:lang => 'en'}
+  =partial 'layouts/header'
+  %body
+    =partial 'layouts/menu'
+    .container.main
+      .main-wrapper
+        =[:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe
+        .row=yield
+        .main-wrapper-push
+    =partial 'layouts/footer'          
+

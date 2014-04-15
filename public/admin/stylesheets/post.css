@@ -1,0 +1,61 @@
+.comment-show{ 
+  list-style-type:none;
+  margin:3%;
+}
+.comment-show li{ 
+  margin:1%;
+  font-size:1.1em;
+}
+.comment-show li:hover{ 
+  background:#eee;
+  border-bottom:1px #CCC solid;
+}
+.page-header{ 
+  text-align:center;
+  margin-top:3%
+  background-image:src("images/plant.png");
+}
+.admin-title{ 
+  padding: 4px;
+  margin-top:3%;
+  font-size:1.5em;
+  width:20%;
+  text-align:center;
+  color:white;
+  background:green;
+  border:solid black 1px;
+}
+
+div.pagination {
+	padding: 3px;
+	margin: 3px 3px 6px 3px;
+}
+
+div.pagination a {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #AAAADD;
+	
+	text-decoration: none; /* no underline */
+	color: #000099;
+}
+div.pagination a:hover, div.pagination a:active {
+	border: 1px solid #000099;
+
+	color: #000;
+}
+div.pagination span.current {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+		border: 1px solid #000099;
+		
+		font-weight: bold;
+		background-color: #000099;
+		color: #FFF;
+	}
+	div.pagination span.disabled {
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		border: 1px solid #EEE;
+		color: #DDD;
+	}

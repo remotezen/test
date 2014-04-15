@@ -1,0 +1,55 @@
+-@arr = ingredient(@recipe.content)
+.container
+  .row
+    .col-lg-8.col-md-8.col-xs-12.center-block.recipe-header
+      %h2
+        =image_tag 'cross_sm.png'
+        Recipe Page
+        .small
+          %br
+            Recipe Title
+        
+  .row
+  .col-lg-8.col-md-8.col-xs-12.center-block.recipe-table
+    %table.table{ background:"#FFF"}
+      %thead
+        %h4
+          %tr{backgroud:"#FFF" }
+            %th.header
+              Main ingredients
+            %th.header
+              Course
+            %th.header
+              Cooking Time
+            %th.header
+              Prep Time
+        %br
+        .small      
+          %tbody    
+            %tr.table-row{background:"white" }    
+              %td.table-cell
+                =@recipe.main_ingredient
+              %td.table-cell
+                =@recipe.course
+              %td.table-cell
+                =@recipe.cooking_time
+              %td.table-cell
+                =@recipe.prep_time
+    .row 
+      .col-lg-8.col-md-8.col-xs-12.center-block.ingredient-header
+        %h3  
+          =partial 'shared/shopping', :locals=>{:f=>"organics if you can"}
+    .row          
+      .col-lg-8.col-md-8.col-xs-12.center-block.ingredient
+        .glyphicon.glyphicon-list-alt.list
+          Ingredients
+        %ul.ingredient-list
+          =partial 'recipes/ingredient', :collection=> ingredient(@recipe.content)
+    -unless @recipe.toppings.nil?
+      .row    
+        .col-lg-8.col-md-8.col-xs-12.center-block
+          =partial 'recipes/topping', :collection=>@recipe.toppings
+    .row.steps-format
+      =partial 'recipes/step', :collection=>@recipe.steps
+          
+

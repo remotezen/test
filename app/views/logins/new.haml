@@ -1,0 +1,17 @@
+.row
+  .col-md-8
+    .login_header
+    - form_tag '/logins/create', :class => 'login-form form-inline', 
+      :method => 'post' do
+      - field_set_tag do
+        .form-group
+          = text_field_tag :email,  :class =>'form-control input-lg',
+             :placeholder =>"Email or Username"
+        .form-group
+          = password_field_tag :password, :class=>'form-control input-lg',
+            :placeholder => "Password"
+        .form-group
+          %button.btn.btn-primary.btn-lg.active{type:"submit"} Login
+    .not-not-signed-up      
+      Not signed up no problem click here 
+      =link_to("Sign up", url_for('accounts/new'))

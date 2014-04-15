@@ -1,0 +1,32 @@
+-h1 = geo(ENV["HOME_IP"]) unless nil
+-h2 = geo(ENV["HOME_IP"]) unless nil
+-@home = distance(h1,h2)
+-button_to 'search',url(:search,:create), 
+  :class => 'form-search search' do 
+  %table
+    %tr
+      %td
+        =text_field_tag :search,:class =>"form-control search-input"
+      %td
+        %button.btn.search-button
+          %span.glyphicon.glyphicon-search.light-green
+      %td.news-feed     
+        &nbsp
+        &nbsp
+        =link_to image_tag('rss.png') , url_for(:blog, :rss)
+      -if logged_in?
+        %td  
+          &nbsp
+          = link_to url_for(:logins, :destroy), class: "btn btn-default" do
+            %i.glyphicon.glyphicon-off.light-green
+      %td      
+        &nbsp
+        %a{href: "mailto:hjoannerogers.com"}
+          %i.glyphicon.glyphicon-envelope.mail-color
+      -if @home < 20      
+        %td      
+          &nbsp
+          %a{href:url_for(:services,:show)}
+            %i.glyphicon.glyphicon-glass.mail-color
+
+      

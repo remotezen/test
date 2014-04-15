@@ -1,0 +1,57 @@
+//custom helper split_date in posts_helper
+//custom helper archive copy archive date to 
+//view
+-content_for :blog_time_line do
+  -post_months = Blog::App.cache.get('post_months')
+  -post_months.sort.reverse.each do |months, posts| 
+    =link_to archive(months), url_for(:blog, :archive, 
+    :id=>split_date(months), :month=>archive(months) )
+    %br
+
+-content_for :recipe_time_line  do
+  -recipe_months = Blog::App.cache.get('recipe_months')
+  -recipe_months.sort.reverse.each do |months, recipes| 
+    =link_to archive(months), url_for(:recipes,:archive,
+      :id=>split_date(months),:month=>archive(months) )
+    %br  
+
+-content_for :comment_time_line  do
+  -comment_months = Blog::App.cache.get('comment_months')
+  -comment_months.sort.reverse.each do |months, comments| 
+    =link_to archive(months), 
+      url_for(:comments,:archive,
+      :id =>split_date(months), :month=> archive(months))
+    %br  
+.container    
+  .row
+    .col-md-3.offset
+      .sidebar
+        %ul  
+          %li.sidebar-header
+            %h3
+              .glyphicon.glyphicon-calendar Archives
+
+          %li.sidebar-sub
+            Posts
+            -if content_for?(:blog_time_line)
+              %li.sidebar-content
+                =yield_content  :blog_time_line
+            -else  
+              %li.sidebar-content
+                No Posts
+          %li.sidebar-sub      
+            Recipes 
+
+          %li.sidebar-content      
+            -if content_for?(:recipe_time_line)
+              =yield_content  :recipe_time_line
+            -else  
+              No Recipes
+          %li.sidebar-sub      
+            Comments 
+          %li.sidebar-content     
+            -if content_for?(:comment_time_line)
+              =yield_content  :comment_time_line
+            -else  
+              No Recipes 
+

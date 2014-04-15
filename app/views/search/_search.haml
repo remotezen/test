@@ -1,0 +1,15 @@
+-if search.class.name == 'Post'
+  %li
+    =link_to "#{search.title}" +  " #{truncate_words(search.body,:length=>4)}...",
+    url_for("blog/show/#{search.slug}") 
+    %p 
+      =truncate_words("#{search.body}",:length=>20)
+-elsif search.class.name == 'Comment' 
+  %li
+    =link_to "#{search.comment}" +  " #{truncate_words(search.comment,:length=>4)}...",
+    url_for("comments/show/#{search.slug}") 
+    %p 
+      =truncate_words("#{search.comment}",:length=>20)
+-else      
+  =search.inspect
+  

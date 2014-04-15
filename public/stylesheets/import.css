@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'volk';
+  src: url("../fonts/Montserrat.otf");
+  src: url("../fonts/Vollkorn-Regular.svg");
+  src: url("../fonts/Vollkorn-Regular.woff");
+  src: url("../fonts/Vollkorn-Regular.otf");
+  src: url("../fonts/Monsterrat-Bold.ttf"); }
+.units-container {
+  margin-top: 80px; }
+
+ul, li {
+  display: block;
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  color: #7a8cb8; }
+
+@font-face {
+  font-family: 'volk';
+  src: url("../fonts/Montserrat.otf");
+  src: url("../fonts/Vollkorn-Regular.svg");
+  src: url("../fonts/Vollkorn-Regular.woff");
+  src: url("../fonts/Vollkorn-Regular.otf");
+  src: url("../fonts/Monsterrat-Bold.ttf"); }

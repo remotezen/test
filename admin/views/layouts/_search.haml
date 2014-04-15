@@ -1,0 +1,10 @@
+-button_to 'search',url(:search,:create), 
+  :class => 'form-search search' do 
+  %table
+    %tr
+      %td
+        =text_field_tag :search,:class =>"form-control search-input"
+      %td
+        %button.btn.btn-success>
+          %span=tag_icon :search
+      %td     

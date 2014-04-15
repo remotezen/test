@@ -1,0 +1,9 @@
+-if logged_in?
+  %li 
+    =link_to "logout", url("logins/destroy")
+    =link_to "Profile", url("accounts/edit/#{current_account.id}")
+    =link_to "Admin",url('/admin') unless current_account.role != "admin"
+-if !logged_in?  
+  %li
+    =link_to "login", url_for('logins/new')
+
