@@ -36,8 +36,8 @@ include ThinkingSphinx::ActiveRecord
 end
 =end
 require 'will_paginate'
-require 'dalli'
-set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1,:expires_in=>0))
+#require 'dalli'
+#set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1,:expires_in=>0))
 #dc.set('abc', 123)
 #value = dc.get('abc')
 

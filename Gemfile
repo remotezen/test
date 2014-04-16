@@ -7,6 +7,7 @@ source 'https://rubygems.org'
 gem 'rake', '>=10.2.2'
 
 # Component requirements
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'will_paginate', '~>3.0'
 gem 'haml'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
